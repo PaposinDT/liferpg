@@ -65,12 +65,23 @@ def main() -> None:
         for item in category_defs:
             code = str(item["code"]).upper()
             category = session.scalar(select(Category).where(Category.code == code))
+            category_name = str(item.get("name") or code.title())
+            category_sort_order = int(item.get("sort_order", 90))
+
             if category is None:
-                category = Category(code=code)
+                # Populate every NOT NULL field before flush. SQLAlchemy may
+                # autoflush pending objects when the next SELECT executes.
+                category = Category(
+                    code=code,
+                    name=category_name,
+                    sort_order=category_sort_order,
+                )
                 session.add(category)
                 session.flush()
-            category.name = str(item.get("name") or code.title())
-            category.sort_order = int(item.get("sort_order", 90))
+            else:
+                category.name = category_name
+                category.sort_order = category_sort_order
+
             category_map[code] = category
 
         for data in skill_defs:
