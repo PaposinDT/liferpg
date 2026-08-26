@@ -1,0 +1,100 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+
+      - name: Python compile check
+        run: python -m compileall -q backend/app backend/tests installer
+
+      - name: Shell syntax check
+        run: bash -n bootstrap.sh install.sh update.sh uninstall.sh scripts/*.sh
+
+      - name: Validate JSON examples
+        run: |
+          python -m json.tool installer/skill_catalog.json >/dev/null
+          python -m json.tool installer/answers.example.json >/dev/null
+          python -m json.tool config/founding.example.json >/dev/null
+          python -m json.tool config/install.example.json >/dev/null
+          python installer/validate_config.py config/founding.example.json config/install.example.json
+
+      - name: Validate non-interactive onboarding
+        run: |
+          python installer/onboarding.py --answers installer/answers.example.json --output-dir /tmp/liferpg-ci-config
+          test -s /tmp/liferpg-ci-config/founding.json
+          test -s /tmp/liferpg-ci-config/install.json
+          test -s .env
+          test "$(stat -c '%a' .env)" = "600"
+          rm -f .env
+
+  frontend:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        working-directory: frontend
+        run: npm install --no-audit --no-fund
+
+      - name: Build dashboard
+        working-directory: frontend
+        run: npm run build
+
+  docker-config:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Generate demo configuration
+        run: python3 installer/onboarding.py --answers installer/answers.example.json
+
+      - name: Validate Compose
+        run: docker compose config >/dev/null
+
+      - name: Build application images
+        run: docker compose build api bot scheduler dashboard
+
+      - name: Start PostgreSQL
+        run: docker compose up -d postgres
+
+      - name: Apply migrations
+        run: docker compose run --rm api alembic -c /app/alembic.ini upgrade head
+
+      - name: Bootstrap demo founding state
+        run: docker compose run --rm api python -m app.bootstrap
+
+      - name: Run game-engine integration tests
+        run: docker compose run --rm -v "$PWD/backend:/app" api pytest -q tests
+
+      - name: Start application and check health
+        run: |
+          docker compose up -d api scheduler dashboard
+          for i in $(seq 1 30); do
+            curl -fsS http://127.0.0.1:8000/health/ready && exit 0
+            sleep 2
+          done
+          docker compose logs --tail=100 api scheduler postgres
+          exit 1
+
+      - name: Compose logs on failure
+        if: failure()
+        run: docker compose logs --tail=200 || true
