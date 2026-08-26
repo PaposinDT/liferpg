@@ -217,6 +217,16 @@ See [docs/DEVELOPMENT.md](docs/DEVELOPMENT.md) and [docs/QA.md](docs/QA.md). Git
 - Initial skill levels are self-assessment inputs, not objective certifications.
 - The current database retains legacy column names such as `russian_state` for schema compatibility; runtime behavior is generic and can use any configured daily focus skill.
 
+## Support Life RPG
+
+Life RPG is free and open source.
+
+If you enjoy the project and want to support its development, you can contribute here:
+
+[Support Life RPG on Revolut](https://revolut.me/paposindt)
+
+Support is completely optional. Life RPG will remain free and open source.
+
 ## License
 
 MIT. See [LICENSE](LICENSE).
