@@ -10,8 +10,20 @@ Before starting, create a Telegram bot with BotFather and know your numeric Tele
 
 ## Interactive installation
 
+### One-line bootstrap
+
 ```bash
-git clone https://github.com/YOUR-USER/liferpg.git
+curl -fsSL https://raw.githubusercontent.com/PaposinDT/liferpg/main/bootstrap.sh | sudo bash
+```
+
+The bootstrap clones `https://github.com/PaposinDT/liferpg.git` and starts the normal guided installer. It explicitly attaches the wizard to `/dev/tty`, so interactive onboarding still works when the bootstrap is piped through `curl`.
+
+For security-sensitive environments, inspect the source first instead of piping it directly to root.
+
+### Clone and inspect first
+
+```bash
+git clone https://github.com/PaposinDT/liferpg.git
 cd liferpg
 sudo ./install.sh
 ```

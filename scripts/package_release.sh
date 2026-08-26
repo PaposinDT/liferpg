@@ -15,7 +15,7 @@ for forbidden in .env config/founding.json config/install.json config/FOUNDING_S
 done
 
 python3 -m compileall -q backend/app backend/tests installer
-bash -n install.sh update.sh uninstall.sh scripts/*.sh
+bash -n bootstrap.sh install.sh update.sh uninstall.sh scripts/*.sh
 python3 installer/validate_config.py config/founding.example.json config/install.example.json >/dev/null
 
 rm -rf "$OUT"

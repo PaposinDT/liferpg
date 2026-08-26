@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuo pipefail
 
-VERSION="1.0.0"
+VERSION="1.0.1"
 DEFAULT_APP_DIR="/srv/liferpg/app"
 DEFAULT_ROOT="/srv/liferpg"
 ANSWERS_FILE=""

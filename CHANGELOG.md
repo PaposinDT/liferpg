@@ -2,6 +2,16 @@
 
 All notable changes to Life RPG are documented here.
 
+## [1.0.1] - 2026-08-26
+
+### Added
+- One-line `bootstrap.sh` installer bound to the official `PaposinDT/liferpg` repository.
+- Repository-specific CI/release badges and Quick Start links.
+
+### Changed
+- Installation documentation now includes both one-line and inspect-first workflows.
+- Release workflow safely updates an existing GitHub Release if the tag was created from the browser.
+
 ## [1.0.0] - 2026-08-25
 
 ### Added

@@ -1,12 +1,16 @@
 # Life RPG
 
+[![CI](https://github.com/PaposinDT/liferpg/actions/workflows/ci.yml/badge.svg)](https://github.com/PaposinDT/liferpg/actions/workflows/ci.yml)
+[![Latest Release](https://img.shields.io/github/v/release/PaposinDT/liferpg)](https://github.com/PaposinDT/liferpg/releases/latest)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 Life RPG is a self-hosted, single-user personal progression system that turns real activity into a persistent RPG character.
 
 It combines a deterministic game engine, PostgreSQL, a Telegram operational interface, a read-only web dashboard, scheduled daily logic, local AI-assisted activity parsing, private remote access through Tailscale, and tested backup/recovery tooling.
 
 The repository includes a guided installer. On a fresh Debian/Ubuntu/Raspberry Pi OS machine, the installer asks the user about their character, current skills, priorities, goals, weekly commitments, daily habits, nutrition/bodyweight tracking, Telegram, local AI, remote access, and backup schedule. It then builds the installation automatically.
 
-> **Status:** v1.0.0. The application is intentionally single-user per installation.
+> **Status:** v1.0.1. The application is intentionally single-user per installation.
 
 ## What it does
 
@@ -71,13 +75,25 @@ Create a bot with `@BotFather` and obtain:
 
 The installer validates and stores them only in the local `.env` file.
 
-### 2. Clone and install
+### 2. Install
+
+**Fastest option, one command:**
 
 ```bash
-git clone https://github.com/YOUR-USER/liferpg.git
+curl -fsSL https://raw.githubusercontent.com/PaposinDT/liferpg/main/bootstrap.sh | sudo bash
+```
+
+The bootstrap downloads the current repository and reconnects the guided installer to your terminal, so the onboarding wizard remains interactive even though the bootstrap itself is piped through `curl`.
+
+**Inspect-first / traditional option:**
+
+```bash
+git clone https://github.com/PaposinDT/liferpg.git
 cd liferpg
 sudo ./install.sh
 ```
+
+Running remote shell code as root is security-sensitive. If you do not want to pipe a script directly into `sudo bash`, use the clone/install method above and inspect `bootstrap.sh` / `install.sh` first.
 
 The wizard handles the rest.
 
