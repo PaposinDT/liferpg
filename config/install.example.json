@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "timezone": "UTC",
+  "tailscale_enabled": false,
+  "ai_enabled": false,
+  "ai_model": "qwen3.5:0.8b",
+  "backup_time": "03:30"
+}

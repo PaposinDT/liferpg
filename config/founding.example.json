@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "generated_on": "2026-08-25",
+  "character": {
+    "name": "DemoOperator"
+  },
+  "categories": [
+    {
+      "code": "COMBAT",
+      "name": "Combat",
+      "sort_order": 10
+    },
+    {
+      "code": "PHYSICAL",
+      "name": "Physical",
+      "sort_order": 20
+    },
+    {
+      "code": "KNOWLEDGE",
+      "name": "Knowledge",
+      "sort_order": 30
+    },
+    {
+      "code": "PRACTICAL",
+      "name": "Practical",
+      "sort_order": 40
+    },
+    {
+      "code": "FINANCE",
+      "name": "Finance",
+      "sort_order": 50
+    },
+    {
+      "code": "CUSTOM",
+      "name": "Custom",
+      "sort_order": 90
+    }
+  ],
+  "skills": [
+    {
+      "code": "russian",
+      "name": "Russian",
+      "category": "KNOWLEDGE",
+      "progression_profile": "language",
+      "level": 6,
+      "priority": "MAIN",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Reach B2 Russian."
+    },
+    {
+      "code": "shooting",
+      "name": "Shooting",
+      "category": "COMBAT",
+      "progression_profile": "combat",
+      "level": 59,
+      "priority": "SIDE",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Develop safe, lawful sport/range competence."
+    },
+    {
+      "code": "strength",
+      "name": "Strength",
+      "category": "PHYSICAL",
+      "progression_profile": "physical",
+      "level": 40,
+      "priority": "SIDE",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Build strong relative strength."
+    }
+  ],
+  "quests": [
+    {
+      "code": "main_russian",
+      "title": "Advance Russian",
+      "type": "MAIN",
+      "status": "ACTIVE",
+      "skill": "russian",
+      "description": "Reach B2 Russian.",
+      "target_value": 30,
+      "target_unit": "SKILL_LEVEL"
+    },
+    {
+      "code": "weekly_russian",
+      "title": "Russian Weekly",
+      "type": "WEEKLY",
+      "status": "ACTIVE",
+      "skill": "russian",
+      "description": "Maintain weekly consistency in Russian.",
+      "target_value": null,
+      "target_unit": null
+    },
+    {
+      "code": "weekly_strength",
+      "title": "Strength Weekly",
+      "type": "WEEKLY",
+      "status": "ACTIVE",
+      "skill": "strength",
+      "description": "Maintain weekly consistency in Strength.",
+      "target_value": null,
+      "target_unit": null
+    },
+    {
+      "code": "bodyweight_target",
+      "title": "Road to 74.0 kg",
+      "type": "MAIN",
+      "status": "ACTIVE",
+      "skill": null,
+      "description": "Reach the configured bodyweight target.",
+      "target_value": 74000,
+      "target_unit": "WEIGHT_G"
+    }
+  ],
+  "weekly_schedules": [
+    {
+      "quest_code": "weekly_russian",
+      "minimum": 4,
+      "stretch": 5,
+      "active": true
+    },
+    {
+      "quest_code": "weekly_strength",
+      "minimum": 1,
+      "stretch": 2,
+      "active": true
+    }
+  ],
+  "habits": [
+    {
+      "code": "daily_focus",
+      "name": "Russian Consistency",
+      "skill": "russian",
+      "status": "ACTIVE",
+      "minimum_minutes": 15,
+      "true_streak": true,
+      "affects_disc": true,
+      "grants_skill_xp": false,
+      "description": "Complete at least 15 minutes of Russian each day."
+    },
+    {
+      "code": "nutrition_target",
+      "name": "Nutrition Target",
+      "skill": null,
+      "status": "ACTIVE",
+      "minimum_minutes": null,
+      "true_streak": true,
+      "affects_disc": true,
+      "grants_skill_xp": false,
+      "description": "Reach the configured daily calorie target."
+    }
+  ],
+  "body": {
+    "weight_tracking": true,
+    "starting_weight_kg": 70.0,
+    "target_weight_kg": 74.0
+  }
+}

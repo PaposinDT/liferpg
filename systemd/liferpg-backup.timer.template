@@ -1,0 +1,10 @@
+[Unit]
+Description=Life RPG automatic backup timer
+
+[Timer]
+OnCalendar=*-*-* __BACKUP_TIME__:00 __TIMEZONE__
+Persistent=true
+RandomizedDelaySec=0
+
+[Install]
+WantedBy=timers.target

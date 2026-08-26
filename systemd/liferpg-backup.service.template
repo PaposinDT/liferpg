@@ -1,0 +1,9 @@
+[Unit]
+Description=Life RPG automatic backup
+Requires=docker.service
+After=docker.service
+
+[Service]
+Type=oneshot
+WorkingDirectory=__APP_DIR__
+ExecStart=__APP_DIR__/scripts/backup.sh

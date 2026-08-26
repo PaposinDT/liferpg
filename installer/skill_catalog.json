@@ -1,0 +1,36 @@
+{
+  "version": 1,
+  "categories": [
+    {"code": "COMBAT", "name": "Combat", "sort_order": 10},
+    {"code": "PHYSICAL", "name": "Physical", "sort_order": 20},
+    {"code": "KNOWLEDGE", "name": "Knowledge", "sort_order": 30},
+    {"code": "PRACTICAL", "name": "Practical", "sort_order": 40},
+    {"code": "FINANCE", "name": "Finance", "sort_order": 50},
+    {"code": "CUSTOM", "name": "Custom", "sort_order": 90}
+  ],
+  "skills": [
+    {"code": "muay_thai", "name": "Muay Thai", "category": "COMBAT", "profile": "combat", "default_goal": "Develop high-level Muay Thai skill."},
+    {"code": "kickboxing", "name": "Kickboxing", "category": "COMBAT", "profile": "combat", "default_goal": "Develop high-level kickboxing skill."},
+    {"code": "boxing", "name": "Boxing", "category": "COMBAT", "profile": "combat", "default_goal": "Develop high-level boxing skill."},
+    {"code": "mma", "name": "MMA", "category": "COMBAT", "profile": "combat", "default_goal": "Develop integrated MMA competence."},
+    {"code": "no_gi_grappling", "name": "No-Gi Grappling", "category": "COMBAT", "profile": "combat", "default_goal": "Develop advanced no-gi grappling competence."},
+    {"code": "bjj_gi", "name": "BJJ Gi", "category": "COMBAT", "profile": "combat", "default_goal": "Develop advanced Brazilian Jiu-Jitsu competence."},
+    {"code": "wrestling", "name": "Wrestling", "category": "COMBAT", "profile": "combat", "default_goal": "Develop strong wrestling competence."},
+    {"code": "shooting", "name": "Shooting", "category": "COMBAT", "profile": "combat", "default_goal": "Develop safe, lawful sport/range shooting competence."},
+
+    {"code": "strength", "name": "Strength", "category": "PHYSICAL", "profile": "physical", "default_goal": "Build strong relative and absolute strength."},
+    {"code": "endurance", "name": "Endurance", "category": "PHYSICAL", "profile": "physical", "default_goal": "Build durable cardiovascular endurance."},
+    {"code": "mobility", "name": "Mobility", "category": "PHYSICAL", "profile": "physical", "default_goal": "Develop useful mobility and flexibility."},
+
+    {"code": "russian", "name": "Russian", "category": "KNOWLEDGE", "profile": "language", "default_goal": "Reach advanced practical Russian."},
+    {"code": "german", "name": "German", "category": "KNOWLEDGE", "profile": "language", "default_goal": "Reach advanced practical German."},
+    {"code": "general_knowledge", "name": "General Knowledge", "category": "KNOWLEDGE", "profile": "knowledge", "default_goal": "Build broad and durable general knowledge."},
+    {"code": "guitar", "name": "Guitar", "category": "KNOWLEDGE", "profile": "knowledge", "default_goal": "Become a capable independent guitarist."},
+
+    {"code": "cooking", "name": "Cooking", "category": "PRACTICAL", "profile": "practical", "default_goal": "Become a highly capable home cook."},
+    {"code": "life_skills", "name": "Life Skills", "category": "PRACTICAL", "profile": "practical", "default_goal": "Become broadly self-sufficient in practical life."},
+
+    {"code": "personal_finance", "name": "Personal Finance", "category": "FINANCE", "profile": "finance", "default_goal": "Build a robust personal financial system."},
+    {"code": "investing", "name": "Investing", "category": "FINANCE", "profile": "finance", "default_goal": "Develop a disciplined investment process."}
+  ]
+}

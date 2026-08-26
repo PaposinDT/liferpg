@@ -1,0 +1,56 @@
+{
+  "character_name": "DemoOperator",
+  "timezone": "UTC",
+  "skills": [
+    {
+      "code": "russian",
+      "name": "Russian",
+      "category": "KNOWLEDGE",
+      "progression_profile": "language",
+      "level": 6,
+      "priority": "MAIN",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Reach B2 Russian."
+    },
+    {
+      "code": "shooting",
+      "name": "Shooting",
+      "category": "COMBAT",
+      "progression_profile": "combat",
+      "level": 59,
+      "priority": "SIDE",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Develop safe, lawful sport/range competence."
+    },
+    {
+      "code": "strength",
+      "name": "Strength",
+      "category": "PHYSICAL",
+      "progression_profile": "physical",
+      "level": 40,
+      "priority": "SIDE",
+      "status": "ACTIVE",
+      "state": "ACTIVE",
+      "goal": "Build strong relative strength."
+    }
+  ],
+  "weekly": [
+    {"skill": "russian", "minimum": 4, "stretch": 5},
+    {"skill": "strength", "minimum": 1, "stretch": 2}
+  ],
+  "focus_skill": "russian",
+  "focus_minutes": 15,
+  "nutrition_enabled": true,
+  "nutrition_kcal": 2400,
+  "weight_tracking": true,
+  "starting_weight_kg": 70.0,
+  "target_weight_kg": 74.0,
+  "telegram_bot_token": "123456789:THIS_IS_A_FAKE_TOKEN_FOR_LOCAL_TESTS_ONLY",
+  "telegram_user_id": 123456789,
+  "ai_enabled": false,
+  "ai_model": "qwen3.5:0.8b",
+  "tailscale_enabled": false,
+  "backup_time": "03:30"
+}
