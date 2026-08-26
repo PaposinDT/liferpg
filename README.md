@@ -10,7 +10,7 @@ It combines a deterministic game engine, PostgreSQL, a Telegram operational inte
 
 The repository includes a guided installer. On a fresh Debian/Ubuntu/Raspberry Pi OS machine, the installer asks the user about their character, current skills, priorities, goals, weekly commitments, daily habits, nutrition/bodyweight tracking, Telegram, local AI, remote access, and backup schedule. It then builds the installation automatically.
 
-> **Status:** v1.0.1. The application is intentionally single-user per installation.
+> **Status:** v1.0.2. The application is intentionally single-user per installation.
 
 ## What it does
 
