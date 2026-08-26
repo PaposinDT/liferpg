@@ -37,7 +37,9 @@ jobs:
           npm run build
 
       - name: Package release
-        run: ./scripts/package_release.sh
+        run: |
+          chmod +x bootstrap.sh install.sh update.sh uninstall.sh scripts/*.sh
+          bash ./scripts/package_release.sh
 
       - name: Publish or update GitHub release
         env:
